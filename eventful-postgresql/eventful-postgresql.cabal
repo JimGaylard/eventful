@@ -1,0 +1,73 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 60edace6024d35d584ae7dad15fa67e0934dea5ca769b60bd06d304c9e09bd68
+
+name:           eventful-postgresql
+version:        0.2.0
+synopsis:       Postgres implementations for eventful
+description:    Postgres implementations for eventful
+category:       Database,Eventsourcing,PostgreSQL
+stability:      experimental
+homepage:       https://github.com/jdreaver/eventful#readme
+bug-reports:    https://github.com/jdreaver/eventful/issues
+maintainer:     David Reaver
+license:        MIT
+license-file:   LICENSE.md
+build-type:     Simple
+extra-source-files:
+    CHANGELOG.md
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/jdreaver/eventful
+
+library
+  exposed-modules:
+      Eventful.Store.Postgresql
+  other-modules:
+      Paths_eventful_postgresql
+  hs-source-dirs:
+      src
+  ghc-options: -Wall
+  build-depends:
+      aeson
+    , base >=4.9 && <5
+    , bytestring
+    , eventful-core
+    , eventful-sql-common
+    , mtl
+    , persistent
+    , text
+  default-language: Haskell2010
+
+test-suite spec
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Eventful.Store.PostgresqlSpec
+      Eventful.Store.Postgresql
+      Paths_eventful_postgresql
+  hs-source-dirs:
+      tests
+      src
+  ghc-options: -Wall
+  build-depends:
+      HUnit
+    , aeson
+    , base >=4.9 && <5
+    , bytestring
+    , eventful-core
+    , eventful-sql-common
+    , eventful-test-helpers
+    , hspec
+    , mtl
+    , persistent
+    , persistent-postgresql
+    , text
+    , utf8-string
+  default-language: Haskell2010

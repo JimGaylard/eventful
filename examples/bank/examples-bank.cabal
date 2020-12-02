@@ -1,0 +1,148 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 330a3fef167e5db55bd4f978dc83cc94a4a8340b8b1553a05558e4f673e80f42
+
+name:           examples-bank
+version:        0.1.0
+synopsis:       Example bank application for eventful
+description:    Example bank application for eventful
+stability:      experimental
+maintainer:     David Reaver
+license:        MIT
+build-type:     Simple
+
+library
+  exposed-modules:
+      Bank.CLI
+      Bank.CLI.Options
+      Bank.CLI.RunCommand
+      Bank.CLI.Store
+      Bank.Json
+      Bank.Models
+      Bank.Models.Account
+      Bank.Models.Account.CommandHandler
+      Bank.Models.Account.Commands
+      Bank.Models.Account.Events
+      Bank.Models.Account.Projection
+      Bank.Models.Customer
+      Bank.Models.Customer.CommandHandler
+      Bank.Models.Customer.Commands
+      Bank.Models.Customer.Events
+      Bank.Models.Customer.Projection
+      Bank.ProcessManagers.TransferManager
+      Bank.ReadModels.CustomerAccounts
+  other-modules:
+      Paths_examples_bank
+  hs-source-dirs:
+      src
+  ghc-options: -Wall
+  build-depends:
+      aeson
+    , aeson-pretty
+    , base >=4.9 && <5
+    , bytestring
+    , containers
+    , contravariant
+    , eventful-core
+    , eventful-sqlite
+    , lens
+    , monad-logger
+    , mtl
+    , optparse-applicative
+    , persistent
+    , persistent-sqlite
+    , persistent-template
+    , safe
+    , stm
+    , sum-type-boilerplate
+    , template-haskell
+    , text
+  default-language: Haskell2010
+
+executable bank-main
+  main-is: bank-main.hs
+  other-modules:
+      Paths_examples_bank
+  hs-source-dirs:
+      executables
+  ghc-options: -Wall
+  build-depends:
+      aeson
+    , aeson-pretty
+    , base >=4.9 && <5
+    , bytestring
+    , containers
+    , contravariant
+    , eventful-core
+    , eventful-sqlite
+    , examples-bank
+    , lens
+    , monad-logger
+    , mtl
+    , optparse-applicative
+    , persistent
+    , persistent-sqlite
+    , persistent-template
+    , safe
+    , stm
+    , sum-type-boilerplate
+    , template-haskell
+    , text
+  default-language: Haskell2010
+
+test-suite spec
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Bank.Models.AccountSpec
+      Bank.CLI
+      Bank.CLI.Options
+      Bank.CLI.RunCommand
+      Bank.CLI.Store
+      Bank.Json
+      Bank.Models
+      Bank.Models.Account
+      Bank.Models.Account.CommandHandler
+      Bank.Models.Account.Commands
+      Bank.Models.Account.Events
+      Bank.Models.Account.Projection
+      Bank.Models.Customer
+      Bank.Models.Customer.CommandHandler
+      Bank.Models.Customer.Commands
+      Bank.Models.Customer.Events
+      Bank.Models.Customer.Projection
+      Bank.ProcessManagers.TransferManager
+      Bank.ReadModels.CustomerAccounts
+      Paths_examples_bank
+  hs-source-dirs:
+      tests
+      src
+  ghc-options: -Wall
+  build-depends:
+      HUnit
+    , aeson
+    , aeson-pretty
+    , base >=4.9 && <5
+    , bytestring
+    , containers
+    , contravariant
+    , eventful-core
+    , eventful-sqlite
+    , hspec
+    , lens
+    , monad-logger
+    , mtl
+    , optparse-applicative
+    , persistent
+    , persistent-sqlite
+    , persistent-template
+    , safe
+    , stm
+    , sum-type-boilerplate
+    , template-haskell
+    , text
+  default-language: Haskell2010

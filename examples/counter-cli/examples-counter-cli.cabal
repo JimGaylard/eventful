@@ -1,0 +1,29 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 19e9a8a306688442d2af45beed03cbdd85c57e19341b8fdd673424fbc2a3d53e
+
+name:           examples-counter-cli
+version:        0.1.0
+synopsis:       Example Counter cli application for eventful
+description:    Example Counter cli application for eventful
+stability:      experimental
+maintainer:     David Reaver
+license:        MIT
+build-type:     Simple
+
+executable counter-cli
+  main-is: counter-cli.hs
+  other-modules:
+      Paths_examples_counter_cli
+  ghc-options: -Wall
+  build-depends:
+      base >=4.9 && <5
+    , eventful-core
+    , eventful-memory
+    , safe
+    , stm
+  default-language: Haskell2010

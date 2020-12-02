@@ -1,0 +1,32 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: eff54ac6c52edf67009fa8150fbf1d17833718c5c7fecfdc4d55be192ee27bed
+
+name:           tutorial-counter
+version:        0.1.0
+stability:      experimental
+maintainer:     David Reaver
+license:        MIT
+build-type:     Simple
+
+library
+  exposed-modules:
+      Counter
+      EventStore
+  other-modules:
+      Paths_tutorial_counter
+  hs-source-dirs:
+      ./.
+  ghc-options: -Wall -pgmL markdown-unlit
+  build-depends:
+      base >=4.9 && <5
+    , eventful-core
+    , eventful-memory
+    , markdown-unlit >=0.4
+    , safe
+    , stm
+  default-language: Haskell2010

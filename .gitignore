@@ -3,7 +3,6 @@
 /cabal.sandbox.config
 /dist/
 /tmp/
-*.cabal
 .stack-work/
 database.db
 venv/
